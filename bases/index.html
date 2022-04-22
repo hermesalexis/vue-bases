@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js intro</title>
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+<body>
+  <!--Vue tiene control absoluto del div-->
+  <div id="myApp">
+    <h3>{{ quote }}</h3>
+    <blockquote> -{{ author }} </blockquote>
+
+    <button v-on:click="changeQuote"> <!-- evento click que ejecuta changeQuote-->
+      Change quote
+    </button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

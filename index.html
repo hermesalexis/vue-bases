@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js intro</title>
+  <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+<body>
+  <div id="myApp">
+    <h1>Batman quotes <small>{{ newQuote }}</small></h1>
+    <input
+      type="text"
+      v-model="newQuote"
+      v-on:keypress.enter="addQuote"><!-- v-model mapea el input con la data que tiene el mismo name del v-model, sólo se dispara cuando presionan enter, con el modificador de evento-->
+    <hr>
+    <ul>
+      <li v-for="({ quote, author }, index) in quotes"> <!-- la directiva v-for funciona similar a un ciclo for, quote y author está desestructurados -->
+        <span>{{ index + 1}} {{ quote }}</span> <!-- quote es la variable del for que carga cada elemento de quotes -->
+        <!-- <blockquote v-if="author">-{{ author }}</blockquote> --> <!-- si el autor no es nulo ni undefined lo muestra -->
+        <blockquote v-show="author">-{{ author }}</blockquote> <!-- v-show construye el elemento sólo que le pone display none -->
+      </li>
+
+    </ul>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
